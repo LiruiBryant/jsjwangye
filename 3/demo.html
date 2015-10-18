@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>手机网站左侧边栏导航菜单 - 源码之家</title>
+<link rel="stylesheet" href="I:\。。。。。。。。。。。我的心血。。。。。。\网站\垂直手风琴\jQuery手风琴菜单\css/style.css" type="text/css" media="screen" />
+<link type="text/css" href="http://cs.cumt.edu.cn/css/main.css" rel="stylesheet" />
+<link href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/reboot.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/media.css">
+
+
+<script type="text/javascript">
+function onclick(msg) {
+	switch(msg )
+	{
+		case x:
+		document.getElementById(iframes).src="www.baidu.com";
+		break;
+		
+		}
+	}
+
+</script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.simplesidebar.js"></script>
+<style type="text/css">
+div > button{
+	color:#FFF;
+	}
+</style>
+<style type="text/css">  
+  .active{position: fixed;_position:absolute;display: block;margin: 10;top:40}  
+  </style> 
+<script type="text/javascript">  
+         /* 
+         gundong = 元素id 
+         fistTop = 元素起始位置 
+         */  
+         function scrollDiv(gundong, fistTop) {  
+             this.fistTop = fistTop;  
+             this.onscroll(gundong);  
+         }  
+  
+         scrollDiv.prototype = {  
+             $: function (id) { return document.getElementById(id) },  
+  
+             timer: "", //定时器  
+  
+             onscroll: function (gundong) {  
+                 var that = this;  
+                 window.onscroll = function () {  
+                     clearTimeout(that.timer);  
+                     that.timer = setTimeout(function () {  
+                         that.sDiv(gundong)  
+                     }, 50);  
+                 }  
+  
+             },  
+  
+             sDiv: function (gundong) {  
+                 var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;  
+  
+                 if (!!window.ActiveXObject && !window.XMLHttpRequest) {  //ie6  
+  
+                     if (scrollTop >= this.fistTop) {  
+                         this.$(gundong).className = "active";//设置CSS的position: fixed  
+                         this.$(gundong).style.top = scrollTop + "px";  
+                     } else {  
+                         // this.$(gundong).className = "pop";  
+                     }  
+  
+                 } else {  //其它浏览器  
+                     scrollTop >= this.fistTop ? this.$(gundong).className = "active" : this.$(gundong).className = "pop";  
+                 }  
+  
+             },  
+  
+             getPosition: function (obj) {  //获取元素的位置  
+                 var top = 0,  
+                     left = 0,  
+                     width = obj.offsetWidth,  
+                     height = obj.offsetHeight;  
+                 while (obj.offsetParent) {  
+                     top += obj.offsetTop;  
+                     left += obj.offsetLeft;  
+                     obj = obj.offsetParent;  
+                 }  
+                 return { "top": top, "left": left, "width": width, "height": height };  
+             }  
+  
+         }  
+  
+         var myDiv = new scrollDiv("left-column", 100);//开始调用  
+  
+   </script>  
+
+
+
+
+</head>
+<body>
+<div  align="center" style="color:#fff">
+<h2>计算机学院</h2>
+</div>
+<div id="gundong"  align="center" class="gundong">
+<button style=" background-color:transparent ; margin:0 ; border:0;"  onclick="onclick()" >学生工作</button>
+<button style=" background-color:transparent ; margin:0 ; border:0;" ><a href="#">学院通知</a></button>
+<button style=" background-color:transparent ; margin:0 ; border:0;" ><a href="#">新闻视点</a></button>
+<button style=" background-color:transparent ; margin:0 ; border:0;" ><a href="#">教务通知</a></button>
+<button style=" background-color:transparent ; margin:0 ; border:0;" ><a href="#">科研通知</a></button>
+</div>
+<iframe id="iframes" src="http://3.lirui1994.sinaapp.com/jsjpage1.html" height="70%"  width="100%" frameborder="0"   scrolling="no" seamless="seamless" />
+
+
+
+
+
+<!-- 代码 开始 -->
+<div class="wrapper">
+
+	<div class="toolbar">
+		<div id="open-sb" class="menu-button menu-left"></div>
+	</div>
+	<section class="sidebar">
+		<nav>
+			<h6>导航</h6>
+			<ul>
+				
+				<li><a href="http://3.lirui1994.sinaapp.com/daohang/xueyuangaikaung.html" target="_blank">学院概况</a></li>
+				<li><a href="http://3.lirui1994.sinaapp.com/daohang/学科建设.html" target="_blank">学科建设</a></li>
+				<li><a href="http://3.lirui1994.sinaapp.com/daohang/师资建设.html" target="_blank">师资建设</a></li>
+				<li><a href="http://3.lirui1994.sinaapp.com/daohang/本科教学.html" target="_blank">本科教学</a></li>
+				<li><a href="http://3.lirui1994.sinaapp.com/daohang/科学研究.html" target="_blank">科学研究</a></li>
+				<li><a href="http://3.lirui1994.sinaapp.com/daohang/研究生培养.html" target="_blank">研究生培养</a></li>
+				<li><a href="http://3.lirui1994.sinaapp.com/daohang/党建工作.html" target="_blank">党建工作</a></li>
+			</ul>
+            
+			
+			<hr>
+			
+			<ul>
+				<li><a href="#" target="_blank">主页</a></li><a href="#">
+				</a><li><a href="www.cumt.edu.cn" target="_blank"></a><a href="#">PC版</a></li>
+				
+			</ul>
+		</nav>
+	</section>
+</div>
+<script>
+$( document ).ready(function() {
+	$.ajaxSetup({
+		cache: false
+	});
+	$( '.sidebar' ).simpleSidebar({
+		settings: {
+			opener: '#open-sb',
+			wrapper: '.wrapper',
+			animation: {
+				duration: 500,
+				easing: 'easeOutQuint'
+			}
+		},
+		sidebar: {
+			align: 'left',
+			width: 200,
+			closingLinks: 'a',
+		}
+	});
+});
+</script>
+<!-- 代码 结束 -->
+ 
+           <div data-role="page" id="e1">
+           <div class="tpxw2">
+<div id="KinSlideshow" style="visibility:hidden; width:150px;height:115px;">
+<a href="javascript:void(0);" href="read.php?id=467" target="_blank"><img src="http://cs.cumt.edu.cn/admin/newphoto/1.png" alt="计算机学院举办2014年青年教师讲课比赛" style="width:170px;height:115px;" /></a>
+<a href="http://cs.cumt.edu.cn/read.php?id=416" target="_blank"><img src="http://cs.cumt.edu.cn/admin/newphoto/2.jpg" alt="中国科学院吴一戎院士一行来我院访问交流" style="width:170px;height:115px;" /></a>
+<a href="http://cs.cumt.edu.cn/read.php?id=382" target="_blank"><img src="http://cs.cumt.edu.cn/admin/newphoto/cff.png" alt="CCF走进中国矿业大学" style="width:170px;height:115px;" /></a>
+<a href="http://cs.cumt.edu.cn/read.php?id=380" target="_blank"><img src="http://cs.cumt.edu.cn/admin/newphoto/1.png" alt="计算机学院召开新一轮科级干部聘任工作布置会" style="width:170px;height:115px;" /></a>
+<a href="http://cs.cumt.edu.cn/read.php?id=325" target="_blank"><img src="http://cs.cumt.edu.cn/admin/newphoto/psb4.jpg" alt="计算机学院召开2014年本科教学工作会议" style="width:170px;height:115px;" /></a>
+
+                  </div>
+                  </div></div></div></div>
+                  </div>
+           </div>
+
+
+
+<div>
+<p  align="center"><i style="color:#FFF">版权所有：中国矿业大学计算机学院</i></p>
+<p  style="color:#FFF" align="center">地址：江苏省徐州市大学路1号中国矿业大学南湖校区，邮编：221116，联系电话：0516-83591709</p>
+
+</div>
+
+    
+                   
+             
+</body>
+</html>
